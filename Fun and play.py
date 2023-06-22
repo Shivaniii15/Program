@@ -3,7 +3,8 @@ from tkinter import *
 from tkinter import ttk
 
 root=Tk() #our window
-root.geometry("635x500")#size of window
+root.geometry("749x405")#size of window
+bg= PhotoImage(file= "screenshot (66).png")#import background image
 
 def quit(): #quit window
     root.destroy()
