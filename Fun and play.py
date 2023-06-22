@@ -4,7 +4,16 @@ from tkinter import ttk
 
 root=Tk() #our window
 root.geometry("749x405")#size of window
-bg= PhotoImage(file= "screenshot (66).png")#import background image
+
+#adding image
+bg= PhotoImage(file= "screenshot (66).png")
+
+#creating canvas
+canvas1= Canvas( root, width=749, height=405)
+canvas1.pack(fill="both")
+
+#displaying image
+canvas1.create_image(0, 0,image=bg)
 
 def quit(): #quit window
     root.destroy()
