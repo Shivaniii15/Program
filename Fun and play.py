@@ -3,7 +3,7 @@ from tkinter import *
 from tkinter import ttk
 
 root=Tk() #our window
-root.geometry("749x405")#size of window
+root.geometry("735x405")#size of window
 
 #adding image
 bg= PhotoImage(file= "screenshot (66).png")
@@ -14,6 +14,10 @@ canvas1.pack(fill="both", expand=True)
 
 #displaying image
 canvas1.create_image(0, 0,image=bg, anchor="nw")
+
+#adding buttons
+button1= Button (100, 40, root, text="Quit", command=quit)
+
 
 def quit(): #quit window
     root.destroy()
