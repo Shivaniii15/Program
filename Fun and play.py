@@ -10,10 +10,10 @@ bg= PhotoImage(file= "screenshot (66).png")
 
 #creating canvas
 canvas1= Canvas( root, width=749, height=405)
-canvas1.pack(fill="both")
+canvas1.pack(fill="both", expand=True)
 
 #displaying image
-canvas1.create_image(0, 0,image=bg)
+canvas1.create_image(0, 0,image=bg, anchor="nw")
 
 def quit(): #quit window
     root.destroy()
