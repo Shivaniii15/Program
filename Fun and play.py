@@ -5,6 +5,10 @@ from tkinter import ttk
 root=Tk() #our window
 root.geometry("735x405")#size of window
 
+#maximum and minimum size
+root.minsize(735,405)
+root.maxsize(735,405)
+
 #adding image
 bg= PhotoImage(file= "screenshot (66).png")
 
@@ -26,13 +30,13 @@ button2.place(x=95, y=376)
 button3= Button (root, text="TOPICS!")
 button3.place(x=170, y=174)
 button4= Button (root, text="FUN FACTS")
-button4.place(x=270, y=174)
+button4.place(x=334, y=160)
 button5= Button (root, text="QUIZES!")
-button5.place(x=400, y=100)
+button5.place(x=530, y=164)
 button6= Button (root, text="REPORT!")
-button6.place
-button7= Button (root, text="NOTES AND SUMMARY")
-button3.place
+button6.place(x=243,y=318)
+button7= Button (root, text="NOTES")
+button7.place(x=448, y=320)
 
 def quit(): #quit window
     root.destroy()
