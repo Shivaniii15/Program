@@ -23,11 +23,19 @@ canvas1.create_image(0, 0,image=bg, anchor="nw")
 #defining font
 myFont = font.Font(family='Helvetica', size=10, weight='bold')
 
+#adding functions
+def quit(): #quit window
+    root.destroy()
+
+def home():
+    root.destroy()
+    import home
+
 #adding buttons
 #the basic ones
 button1= Button (root, text="Quit", command=quit , bg='#F14975', fg='white', activebackground='#288C70', activeforeground='white' )
 button1.place(x=580, y=385)
-button2= Button (root, text="Home", bg='#F14975', fg='white', activebackground='#288C70', activeforeground='white')
+button2= Button (root, text="Home", command=home, bg='#F14975', fg='white', activebackground='#288C70', activeforeground='white')
 button2.place(x=175, y=385)
 
 
