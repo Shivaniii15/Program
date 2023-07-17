@@ -23,6 +23,13 @@ canvas1.create_image(0, 0,image=bg, anchor="nw")
 #defining font
 myFont = font.Font(family='Helvetica', size=10, weight='bold')
 
+#function to go to the next page
+def topics():
+    root.destroy()
+    import topics
+
+
+
 #adding buttons
 #the basic ones
 button1= Button (root, text="Quit", command=quit , bg='#F14975', fg='white', activebackground='#288C70', activeforeground='white' )
@@ -31,7 +38,7 @@ button2= Button (root, text="Home", bg='#F14975', fg='white', activebackground='
 button2.place(x=95, y=376)
 
 #the activity ones
-button3= Button (root, text="TOPICS!", bg='#8191FF', activebackground='#133795', activeforeground='white')
+button3= Button (root, text="TOPICS!", command=topics, bg='#8191FF', activebackground='#133795', activeforeground='white')
 button3.place(x=167, y=170)
 button4= Button (root, text="FUN FACTS", bg='#FFC327', activebackground='#FF914D', activeforeground='white')
 button4.place(x=330, y=160)
