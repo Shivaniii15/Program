@@ -24,11 +24,21 @@ canvas1.create_image(0, 0,image=bg, anchor="nw")
 myFont = font.Font(family='Helvetica', size=10, weight='bold')
 
 #function to go to the next page
-def topics():
+def topics():#topics page
     root.destroy()
     import topics
 
+def facts():#fun facts page
+    root.destroy()
+    import facts 
 
+def quizzes():#quizzes page
+    root.destroy()
+    import quizzes
+
+def notes():
+    root.destroy()
+    import notes
 
 #adding buttons
 #the basic ones
@@ -40,13 +50,13 @@ button2.place(x=95, y=376)
 #the activity ones
 button3= Button (root, text="TOPICS!", command=topics, bg='#8191FF', activebackground='#133795', activeforeground='white')
 button3.place(x=167, y=170)
-button4= Button (root, text="FUN FACTS", bg='#FFC327', activebackground='#FF914D', activeforeground='white')
+button4= Button (root, text="FUN FACTS", command=facts, bg='#FFC327', activebackground='#FF914D', activeforeground='white')
 button4.place(x=330, y=160)
-button5= Button (root, text="QUIZES!", bg='#FF8652', activebackground='#FF0013', activeforeground='white')
+button5= Button (root, text="QUIZES!", command=quizzes, bg='#FF8652', activebackground='#FF0013', activeforeground='white')
 button5.place(x=526, y=164)
 button6= Button (root, text="REPORT!", bg='#43B262', activebackground='#168062', activeforeground='white')
 button6.place(x=235,y=318)
-button7= Button (root, text="NOTES", bg='#C24468', activebackground='#E13B67', activeforeground='white')
+button7= Button (root, text="NOTES", command=notes, bg='#C24468', activebackground='#E13B67', activeforeground='white')
 button7.place(x=445, y=320)
 
 #applying font
