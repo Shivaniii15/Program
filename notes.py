@@ -4,10 +4,10 @@ from tkinter import ttk
 import tkinter.font as font
 
 root=Tk() #our window
-root.geometry("809x460")#size of window
+root.geometry("1050x590")#size of window
 
 #adding image
-bg= PhotoImage(file= "screenshot (92).png")
+bg= PhotoImage(file= "screenshot (91).png")
 
 #creating canvas
 canvas1= Canvas( root, width=809, height=460)
@@ -30,9 +30,9 @@ def home():
 #adding buttons
 #the basic ones
 button1= Button (root, text="Quit", command=quit , bg='#F14975', fg='white', activebackground='#288C70', activeforeground='white' )
-button1.place(x=600, y=423)
+button1.place(x=810, y=550)
 button2= Button (root, text="Home", command=home, bg='#F14975', fg='white', activebackground='#288C70', activeforeground='white')
-button2.place(x=185, y=423)
+button2.place(x=225, y=550)
 
 #applying font
 button1['font']= myFont
