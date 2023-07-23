@@ -4,15 +4,19 @@ from tkinter import ttk
 import tkinter.font as font
 
 root=Tk() #our window
-root.geometry("809x460")#size of window
+root.geometry("920x530")#size of window
+
+#maximum and minimum size
+root.minsize(920,530)
+root.maxsize(920,530)
 
 #creating canvas
-canvas1= Canvas( root, width=749, height=405)
+canvas1= Canvas( root, width=915, height=530)
 canvas1.pack(fill="both", expand=True)
 canvas1.pack()
 
 #adding image
-bg= PhotoImage(file= "screenshot (42).png")
+bg= PhotoImage(file= "screenshot (96).png")
 
 #displaying image
 canvas1.create_image(0, 0,image=bg, anchor="nw")
@@ -31,9 +35,9 @@ def home():
 #adding buttons
 #the basic ones
 button1= Button (root, text="Quit", command=quit , bg='#F14975', fg='white', activebackground='#288C70', activeforeground='white' )
-button1.place(x=600, y=423)
+button1.place(x=750, y=490)
 button2= Button (root, text="Home", command=home, bg='#F14975', fg='white', activebackground='#288C70', activeforeground='white')
-button2.place(x=185, y=423)
+button2.place(x=140, y=490)
 
 #applying font
 button1['font']= myFont
