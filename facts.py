@@ -47,9 +47,11 @@ label2=Label(root, text="There is no Roman numeral for zero!", wraplength=100, w
 label3=Label(root, text="“Forty” is the only number that is spelt with letters arranged in alphabetical order!", wraplength=100, width= 12,
       bg="#7B99CE", font=("helvetica", 9)).place(x=576, y=130)
 label4=Label(root, text="“Every odd number has an “e” in it!", wraplength=100, width= 12,
-      bg="#E5645E", font=("helvetica", 10)).place(x=149, y=312)
+      bg="#C24468", font=("helvetica", 10)).place(x=149, y=312)
 label5=Label(root, text="The symbol for division (i.e.÷) is called an obelus!", wraplength=100, width= 12,
-      bg="#288C70", font=("helvetica", 10)).place(x=370, y=312)
+      bg="#43B262", font=("helvetica", 10)).place(x=372, y=312)
+label6=Label(root, text="2 and 5 are the only prime numbers that end in 2 or 5!", wraplength=100, width= 12,
+      bg="#EF8A5E", font=("helvetica", 10)).place(x=574, y=308)
 
 
 #applying font
