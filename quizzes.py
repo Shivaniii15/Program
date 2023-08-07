@@ -38,10 +38,13 @@ button1= Button (root, text="Quit", command=quit , bg='#F14975', fg='white', act
 button1.place(x=750, y=490)
 button2= Button (root, text="Home", command=home, bg='#F14975', fg='white', activebackground='#288C70', activeforeground='white')
 button2.place(x=140, y=490)
+button3= Button (root, text="Next", bg='#F14975', fg='white', activebackground='#288C70', activeforeground='white')
+button3.place(x=750, y=440)
 
 #applying font
 button1['font']= myFont
 button2['font']= myFont
+button3['font']= myFont
 
 #running the code
 def main():
