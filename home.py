@@ -36,9 +36,9 @@ def quizzes():#quizzes page
     root.destroy()
     import quizzes
 
-def notes():
+def motivation():
     root.destroy()
-    import notes
+    import motivation
 
 #adding buttons
 #the basic ones
@@ -56,8 +56,8 @@ button5= Button (root, text="QUIZES!", command=quizzes, bg='#FF8652', activeback
 button5.place(x=526, y=164)
 button6= Button (root, text="REPORT!", bg='#43B262', activebackground='#168062', activeforeground='white')
 button6.place(x=235,y=318)
-button7= Button (root, text="NOTES", command=notes, bg='#C24468', activebackground='#E13B67', activeforeground='white')
-button7.place(x=445, y=320)
+button7= Button (root, text="MOTIVATION", command=motivation, bg='#C24468', activebackground='#E13B67', activeforeground='white')
+button7.place(x=427, y=320)
 
 #applying font
 button1['font']= myFont

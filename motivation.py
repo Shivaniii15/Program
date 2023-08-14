@@ -4,10 +4,14 @@ from tkinter import ttk
 import tkinter.font as font
 
 root=Tk() #our window
-root.geometry("1050x590")#size of window
+root.geometry("809x458")#size of window
+
+#maximum and minimum size
+root.minsize(809,458)
+root.maxsize(809,458)
 
 #adding image
-bg= PhotoImage(file= "screenshot (91).png")
+bg= PhotoImage(file= "screenshot (112).png")
 
 #creating canvas
 canvas1= Canvas( root, width=809, height=460)
@@ -30,9 +34,15 @@ def home():
 #adding buttons
 #the basic ones
 button1= Button (root, text="Quit", command=quit , bg='#F14975', fg='white', activebackground='#288C70', activeforeground='white' )
-button1.place(x=810, y=550)
+button1.place(x=600, y=423)
 button2= Button (root, text="Home", command=home, bg='#F14975', fg='white', activebackground='#288C70', activeforeground='white')
-button2.place(x=225, y=550)
+button2.place(x=185, y=423)
+
+#adding labels
+label1=Label(root, text="1000 is the only number from 0 to 1000 that has an “a” in it!", wraplength=100, width= 13,
+      bg="#CB6CE6", font=("helvetica", 10)).place(x=145, y=145)
+
+
 
 #applying font
 button1['font']= myFont
