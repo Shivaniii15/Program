@@ -1,5 +1,12 @@
+from tkinter import *
+from tkinter import ttk
+import tkinter.font as font
 import tkinter as tk
 from tkinter import messagebox
+
+
+#adding image
+bg= PhotoImage(file= "screenshot (96).png")
 
 class QuizApp:
     def __init__(self, root):

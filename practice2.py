@@ -429,12 +429,11 @@ class Interface:
         button.bind("<Leave>", func=lambda e: button.config(
             background=colorOnLeave, fg="black"))
 
-
 # main routine
 if __name__ == "__main__":
     root = Tk()
     root.title("Math Solving Problem")
     root.geometry("800x528")
- 
+
     Start = Interface(root)
     root.mainloop()
