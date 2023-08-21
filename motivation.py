@@ -39,9 +39,18 @@ button2= Button (root, text="Home", command=home, bg='#F14975', fg='white', acti
 button2.place(x=185, y=423)
 
 #adding labels
-label1=Label(root, text="1000 is the only number from 0 to 1000 that has an “a” in it!", wraplength=100, width= 13,
+label1=Label(root, text="Believe you can and you are halfway there!", wraplength=100, width= 13,
       bg="#CB6CE6", font=("helvetica", 10)).place(x=145, y=145)
-
+label2=Label(root, text="Just keep moving. You will reach soon!", wraplength=100, width= 13,
+      bg="#FFCE4F", font=("helvetica", 10)).place(x=368, y=145)
+label3=Label(root, text="It is never too late to be what you might have been!", wraplength=100, width= 12,
+      bg="#7B99CE", font=("helvetica", 9)).place(x=576, y=130)
+label4=Label(root, text="Happiness is not by chance, but by choice!", wraplength=100, width= 12,
+      bg="#C24468", font=("helvetica", 10)).place(x=149, y=312)
+label5=Label(root, text="If You cannot do great things, You can do small things ina  agreat way", wraplength=100, width= 12,
+      bg="#43B262", font=("helvetica", 10)).place(x=372, y=312)
+label6=Label(root, text="2 and 5 are the only prime numbers that end in 2 or 5!", wraplength=100, width= 12,
+      bg="#EF8A5E", font=("helvetica", 10)).place(x=574, y=308)
 
 
 #applying font

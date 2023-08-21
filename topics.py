@@ -38,6 +38,10 @@ button1.place(x=580, y=385)
 button2= Button (root, text="Home", command=home, bg='#F14975', fg='white', activebackground='#288C70', activeforeground='white')
 button2.place(x=175, y=385)
 
+#applying font
+button1['font']= myFont
+button2['font']= myFont 
+
 
 def main():
     global root
