@@ -1,62 +1,46 @@
 from tkinter import *
-from tkinter import ttk
-import tkinter.font as font
 import tkinter as tk
-from tkinter import messagebox
+from tkinter import ttk
+import random
+from tkinter.font import Font
+import csv
+from csv import reader
 
 
-#adding image
-bg= PhotoImage(file= "screenshot (96).png")
+#creating a class for all the interface widgets
+class Interface:
+    def __init__(self, parent):
+        global count, rank #declaring global count
+        count=0
+        rank=1
+        self.fontLabel = Font (
+            family="Helvetica", 
+            size=10, 
+            weight= "bold",
+            overstrike=0)
+        
+#layout for the first page
+        self.firstFrame = Frame (parent,bg="white")
+        self.firstFrame.grid(row=0, column=0)
 
-class QuizApp:
-    def __init__(self, root):
-        self.root = root
-        self.root.title("MCQ Quiz")
+        self.image1= PhotoImage(file="Screenshot (122).png")
+        self.start_bg= Label(self.firstFrame, image=self.image1)
+        self.start_bg.grid(row=1,column=1)
+        
+        self.start_btn= Button(
+             self.firstFrame, text="Start", bg="#F14975", 
+activebackground="#288C70", width=10, font=("Helvetica", 12, 
+"bold"), command=self.start_bg)
+        self.start_btn.place(relx=0.75, rely=0.5, anchor=CENTER)
+        
 
-        self.questions = [
-            "What is the capital of France?",
-            "Which planet is known as the 'Red Planet'?",
-            "What is 2 + 2?"
-        ]
 
-        self.options = [
-            ["Paris", "London", "Berlin", "Madrid"],
-            ["Mars", "Venus", "Jupiter", "Saturn"],
-            ["3", "5", "4", "7"]
-        ]
-
-        self.correct_answers = [0, 0, 2]  # Index of correct option for each question
-
-        self.current_question = 0
-        self.score = 0
-
-        self.question_label = tk.Label(root, text=self.questions[self.current_question])
-        self.question_label.pack()
-
-        self.option_buttons = []
-        for i in range(4):
-            button = tk.Button(root, text=self.options[self.current_question][i], command=lambda i=i: self.check_answer(i))
-            button.pack()
-            self.option_buttons.append(button)
-
-    def check_answer(self, selected_option):
-        if selected_option == self.correct_answers[self.current_question]:
-            self.score += 1
-
-        self.current_question += 1
-
-        if self.current_question < len(self.questions):
-            self.question_label.config(text=self.questions[self.current_question])
-            for i in range(4):
-                self.option_buttons[i].config(text=self.options[self.current_question][i])
-        else:
-            self.show_result()
-
-    def show_result(self):
-        messagebox.showinfo("Quiz Result", f"You scored {self.score} out of {len(self.questions)}!")
-        self.root.destroy()
-
+#running the code
+# main routine
 if __name__ == "__main__":
-    root = tk.Tk()
-    app = QuizApp(root)
+    root = Tk()
+    root.title("Shivani <3")
+    root.geometry("895x505")
+
+    Start = Interface(root)
     root.mainloop()

@@ -1,3 +1,4 @@
+
 from itertools import count
 from tkinter import *
 from tkinter import ttk
@@ -5,6 +6,8 @@ import random
 from tkinter.font import Font
 import csv
 from csv import reader
+from Data import *
+
 
 # Creating a class for all the interface widgets
 
@@ -35,13 +38,64 @@ class Interface:
             self.firstFrame, text="Start", bg="#E69138", activebackground="#696662", width=10, font=("Helvetica", 20, "bold"), command=self.start_btn)
         self.start_btn.place(relx=0.75, rely=0.5, anchor=CENTER)
 
+        ###
+        # Creating a frame for NAME FRAME
+        self.secondFrame = Frame(parent, bg="white")
+        self.secondFrame.grid(row=0, column=0, rowspan=5, columnspan=6)
+        self.image2 = PhotoImage(file="headingBackground.png")
+        self.heading_bg = Label(self.secondFrame, image=self.image2)
+        self.heading_bg.grid(row=0, column=0, columnspan=6, sticky=W)
+        self.heading_bg.grid_propagate(1)
 
+        #-------------------------till here-------------------------#
+
+        # Layout for the LEFT part of the NAME FRAME
+        self.leftFrame = Frame(self.secondFrame, bg="white")
+        self.leftFrame.grid(row=1, column=1, rowspan=5, padx=0)
+        self.name_label = Label(
+            self.leftFrame, text="    User name: ", bg="white", font=self.fontLabel)
+        self.name_label.grid(row=2, column=1, pady=10)
+        self.age_label = Label(
+            self.leftFrame, text="    Age: ", bg="white",  font=self.fontLabel)
+        self.age_label.grid(row=3, column=1, pady=20)
+        self.name_entry = Entry(self.leftFrame,  font=(
+            "Slab Serif", 14, ""), width=18, bg="#F9CB9C")
+        self.name_entry.grid(row=2, column=2, padx=0, pady=0)
+        self.age_entry = Entry(self.leftFrame,  font=(
+            "Slab Serif", 14, ""), width=18,  bg="#F9CB9C")
+        self.age_entry.grid(row=3, column=2, pady=0)
+        self.space_label_left = Label(
+            self.leftFrame, text="", bg="white", fg="white", font=("", 10, "bold"))
+        self.space_label_left.grid(row=4, column=2, pady=2)
+        # Layout for the RIGHT part of the NAME FRAME
+        self.rightFrame = Frame(
+            self.secondFrame, bg="#ffadad", height=500, width=500)
+        self.rightFrame.grid(row=2, column=2, padx=30)
+        self.question_label = Label(
+            self.rightFrame, font=self.fontLabel, text="What problem would you like to solve?", bg="#ffadad")
+        self.question_label.grid(
+            row=1, column=1, ipady=10, pady=15, ipadx=20, padx=5)
         # Adding radiobutton of choices for users to choose
         self.v = StringVar()
         self.v.set(0)
         self.area_rb = Radiobutton(self.rightFrame, variable=self.v, value="one", font=self.fontLabel,
                                    text="Area", bg="#ffadad")
-
+        self.surface_rb = Radiobutton(self.rightFrame, variable=self.v, value="two", font=self.fontLabel,  bg="#ffadad",
+                                      text="Surface Area")
+        self.volume_rb = Radiobutton(self.rightFrame, variable=self.v, value="three", font=self.fontLabel,
+                                     text="Volume", bg="#ffadad")
+        self.area_rb.grid(row=3, column=1, ipady=10,
+                          pady=10, sticky=W, padx=60)
+        self.surface_rb.grid(row=4, column=1, ipady=10,
+                             pady=10, sticky=W, padx=60)
+        self.volume_rb.grid(row=5, column=1, ipady=10,
+                            pady=10, sticky=W, padx=60)
+        self.next_btn_name = Button(
+            self.rightFrame, text="Next", bg="#E69138", activebackground="#696662", width=8, font=("Helvetica", 14, "bold"), command=self.next_btn_name)
+        self.next_btn_name.grid(row=6, column=1, padx=60, pady=10, sticky=NW)
+        self.space_label = Label(self.rightFrame, text="", font=(
+            "Helvetica", 16, ""),  bg="#ffadad")
+        self.space_label.grid(row=7, column=1, padx=60, pady=10, sticky=NW)
 
         ###
         # Creating a frame for PROBLEM FRAME
@@ -80,13 +134,24 @@ class Interface:
         self.answer_entry.grid(row=6, column=0, padx=20, pady=5)
         # LEFT_PROBLEM FRAME: image holder
         self.image_Area = []
-
+        self.image_Surface = []
+        self.image_Volume = []
         # LEFT_PROBLEM FRAME: Area image
         self.image_Area.append(PhotoImage(file="rectangleArea.png"))
         self.image_Area.append(PhotoImage(file="triangleArea.png"))
         self.image_Area.append(PhotoImage(file="trepeziumArea.png"))
         self.target_Area = 0
-
+        # LEFT_PROBLEM FRAME: Surface image
+        self.image_Surface.append(PhotoImage(file="surfaceCube.png"))
+        self.image_Surface.append(PhotoImage(file="surfaceSphere.png"))
+        self.image_Surface.append(PhotoImage(file="surfaceCylinder.png"))
+        self.target_Surface = 0
+        # LEFT_PROBLEM FRAME: Volume image
+        self.image_Volume.append(PhotoImage(file="rectangleVolume.png"))
+        self.image_Volume.append(PhotoImage(file="coneVolume.png"))
+        self.image_Volume.append(PhotoImage(file="sphereVolume.png"))
+        self.target_Volume = 0
+        self.score_add = 0
         # RIGHT_PROBLEM FRAME: positon buttons
         self.photo = Label(
             self.leftFrame_2, image=self.image_Area[2], bg="white")
@@ -125,10 +190,16 @@ class Interface:
         self.v1.set(0)
         self.area_rb = Radiobutton(self.middleFrame, variable=self.v1, value="one", font=self.fontLabel,
                                    text="Area", bg="white")
-
+        self.surface_rb = Radiobutton(self.middleFrame, variable=self.v1, value="two", font=self.fontLabel,  bg="white",
+                                      text="Surface Area")
+        self.volume_rb = Radiobutton(self.middleFrame, variable=self.v1, value="three", font=self.fontLabel,
+                                     text="Volume", bg="white")
         self.area_rb.grid(row=3, column=1, ipady=7,
                           pady=10, sticky=W, padx=60)
-
+        self.surface_rb.grid(row=4, column=1, ipady=7,
+                             pady=10, sticky=W, padx=60)
+        self.volume_rb.grid(row=5, column=1, ipady=7,
+                            pady=10, sticky=W, padx=60)
         self.rb_error = Label(self.middleFrame, text="", bg="white",
                               fg="white", font=("", 10, "bold"))
         self.rb_error.grid(row=6, column=1, padx=60, pady=7)
@@ -257,11 +328,20 @@ class Interface:
         self.hide_frame(self.forthFrame)
         self.hide_frame(self.fifthFrame)
         self.show_frame(self.thirdFrame)
-        self.m = Image(self.v.get(), self.v1.get(), self.target_Area,)
+        self.m = Image(self.v.get(), self.v1.get(), self.target_Area,
+                       self.target_Surface, self.target_Volume)
         if self.m.area_rb():
             self.photo.config(image=self.image_Area[0], bg="white")
             self.change_number()
 
+        elif self.m.surface_rb():
+            self.photo.config(
+                image=self.image_Surface[0], bd=0, bg="white")
+            self.change_number()
+
+        elif self.m.volume_rb():
+            self.photo.config(image=self.image_Volume[0], bd=0, bg="white")
+            self.change_number()
 
     # Fuction to move from RETRY FRAME to PROBLEM FRAME
     def restart_to_problem(self):
@@ -284,6 +364,21 @@ class Interface:
                 image=self.image_Area[self.target_Area])
             self.change_number()
 
+        if self.m.surface_rb():
+            self.target_Surface -= 1
+            if self.target_Surface < 0:
+                self.target_Surface = len(self.image_Surface) - 1
+            self.photo.configure(
+                image=self.image_Surface[self.target_Surface])
+            self.change_number()
+
+        if self.m.volume_rb():
+            self.target_Volume -= 1
+            if self.target_Volume < 0:
+                self.target_Volume = len(self.image_Volume) - 1
+            self.photo.configure(
+                image=self.image_Volume[self.target_Volume])
+            self.change_number()
 
     # Fuction to change variable value
     def change_number(self):
@@ -306,7 +401,34 @@ class Interface:
                 for i in range(1, 10):
                     self.a_variable.config(
                         text=f"If h = {self.x}        If b = {self.y}" + "\n" + "\n" + f"If a = {self.z}")
-
+        elif self.v.get() == "two" or self.v1.get() == "two":
+            self.q_label.config(text=f"Calculate the surface area")
+            if self.target_Surface == 0:
+                for i in range(1, 10):
+                    self.a_variable.config(
+                        text=f"If b = {self.y}" + "\n" + "\n")
+            elif self.target_Surface == 1:
+                for i in range(1, 10):
+                    self.a_variable.config(
+                        text=f"If r = {self.x}" + "\n" + "\n" + f"If pi = 3.14")
+            elif self.target_Surface == 2:
+                for i in range(1, 10):
+                    self.a_variable.config(
+                        text=f" If h = {self.y}     If pi = 3.14" + "\n" + "\n" + f"If r = {self.x}")
+        elif self.v.get() == "three" or self.v1.get() == "three":
+            self.q_label.config(text=f"Calculate the volume of this shape")
+            if self.target_Volume == 0:
+                for i in range(1, 10):
+                    self.a_variable.config(
+                        text=f"If h = {self.z}       If b = {self.y}" + "\n" + "\n" + f"If a = {self.x}")
+            elif self.target_Volume == 1:
+                for i in range(1, 10):
+                    self.a_variable.config(
+                        text=f"If h = {self.y}      If r = {self.x}" + "\n" + "\n" + f"If pi = 3.14")
+            elif self.target_Volume == 2:
+                for i in range(1, 10):
+                    self.a_variable.config(
+                        text=f" If r = {self.x}" + "\n" + "\n" + f"If pi =3.14")
 
     # Fuction to move from PROBLEM FRAME to RESTART FRAME
     def restart_problem(self):
@@ -320,7 +442,8 @@ class Interface:
 
     # Fuction to check user answer
     def check(self):
-        self.s = Score(self.x, self.y, self.z, self.v.get(), self.v1.get(), self.target_Area,)
+        self.s = Score(self.x, self.y, self.z, self.v.get(), self.v1.get(), self.target_Area,
+                       self.target_Surface, self.target_Volume)
         try:
             self.f = float(self.answer_entry.get())
             if self.s.check_answer(self.f):
@@ -428,6 +551,7 @@ class Interface:
             background=colorOnHover, fg="white"))
         button.bind("<Leave>", func=lambda e: button.config(
             background=colorOnLeave, fg="black"))
+
 
 # main routine
 if __name__ == "__main__":
