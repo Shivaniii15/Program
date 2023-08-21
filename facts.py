@@ -57,6 +57,12 @@ label6=Label(root, text="2 and 5 are the only prime numbers that end in 2 or 5!"
 #applying font
 button1['font']= myFont
 button2['font']= myFont
+label1['font']= myFont
+label2['font']= myFont
+label3['font']= myFont
+label4['font']= myFont
+label5['font']= myFont
+label6['font']= myFont
 
 #running the code
 def main():

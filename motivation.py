@@ -40,17 +40,17 @@ button2.place(x=185, y=423)
 
 #adding labels
 label1=Label(root, text="Believe you can and you are halfway there!", wraplength=100, width= 13,
-      bg="#CB6CE6", font=("helvetica", 10)).place(x=145, y=145)
+      bg="#CB6CE6", font=("helvetica", 10)).place(x=145, y=150)
 label2=Label(root, text="Just keep moving. You will reach soon!", wraplength=100, width= 13,
-      bg="#FFCE4F", font=("helvetica", 10)).place(x=368, y=145)
-label3=Label(root, text="It is never too late to be what you might have been!", wraplength=100, width= 12,
-      bg="#7B99CE", font=("helvetica", 9)).place(x=576, y=130)
+      bg="#FFCE4F", font=("helvetica", 10)).place(x=350, y=150)
+label3=Label(root, text="It is never too late to be what you might have been!", wraplength=100, width= 14,
+      bg="#7B99CE", font=("helvetica", 9)).place(x=550, y=154)
 label4=Label(root, text="It always seems impossible until it's done!", wraplength=100, width= 12,
-      bg="#C24468", font=("helvetica", 10)).place(x=149, y=312)
-label5=Label(root, text="Strive for progress, not perfection", wraplength=100, width= 12,
-      bg="#43B262", font=("helvetica", 10)).place(x=372, y=312)
+      bg="#C24468", font=("helvetica", 10)).place(x=149, y=320)
+label5=Label(root, text="Strive for progress, not perfection!", wraplength=100, width= 12,
+      bg="#43B262", font=("helvetica", 10)).place(x=352, y=320)
 label6=Label(root, text="The secret to getting ahead is getting started!", wraplength=100, width= 12,
-      bg="#EF8A5E", font=("helvetica", 10)).place(x=574, y=308)
+      bg="#EF8A5E", font=("helvetica", 10)).place(x=566, y=320)
 
 
 #applying font

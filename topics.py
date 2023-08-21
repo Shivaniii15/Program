@@ -42,6 +42,19 @@ button2.place(x=175, y=385)
 button1['font']= myFont
 button2['font']= myFont 
 
+#adding labels
+label1=Label(root, text="Roman Numerals", wraplength=200, width= 14,
+      bg="#43B262", font=("helvetica", 12)).place(x=145, y=140)
+label2=Label(root, text="Decimals", wraplength=200, width= 14,
+      bg="#E1691E", font=("helvetica", 12)).place(x=145, y=220)
+label3=Label(root, text="Complex calculations", wraplength=200, width= 16,
+      bg="#43B262", font=("helvetica", 12)).place(x=500, y=140)
+label4=Label(root, text="Fractions", wraplength=100, width= 14,
+      bg="#43B262", font=("helvetica", 12)).place(x=149, y=300)
+label5=Label(root, text="Percentage", wraplength=100, width= 14,
+      bg="#E1691E", font=("helvetica", 12)).place(x=500, y=220)
+label6=Label(root, text="Times tables", wraplength=100, width= 14,
+      bg="#43B262", font=("helvetica", 12)).place(x=500, y=300)
 
 def main():
     global root
