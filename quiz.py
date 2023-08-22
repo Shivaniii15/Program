@@ -35,7 +35,7 @@ activebackground="#288C70", width=10, font=("Helvetica", 12,
 
         #image
         self.secondFrame= Frame(parent, bg="white")
-        self.secondFrame.grid(row=0, column=0, columnspan=6, sticky=W)
+        self.secondFrame.grid(row=0, column=2, columnspan=6, sticky=W)
         self.image2= PhotoImage(file="Screenshot (122.1).png")
 
         #heading
