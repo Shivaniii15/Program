@@ -29,7 +29,7 @@ class tkinterApp(tk.Tk):
   
 # iterating through a tuple consisting
 # of the different page layouts
-        for F in (StartPage, Page1, Page2):
+        for F in (StartPage, Page1, Page2, Page3, Page4):
   
             frame = F(container, self)
   
@@ -48,6 +48,8 @@ class tkinterApp(tk.Tk):
         frame = self.frames[cont]
         frame.tkraise()
   
+
+#-------------------------------------------------------------------#
 
 
 # first window frame startpage  
@@ -78,6 +80,9 @@ class StartPage(tk.Frame):
         button1.place(x=610, y=245)
 
 
+#-------------------------------------------------------------------#
+
+
 # second window frame page1
 class Page1(tk.Frame):
      
@@ -95,7 +100,7 @@ class Page1(tk.Frame):
 #options 
         #option 1 is right
         option1=Radiobutton(self, value="one", font=("helvetica", 12), text="X", bg="#F14975", fg="black")
-        option1.place(x=300, y=426)
+        option1.place(x=295, y=426)
         option2=Radiobutton(self, value="two", font=("helvetica", 12), text="L", bg="#F14975", fg="black")
         option2.place(x=572, y=426)
         option3=Radiobutton(self, value="three", font=("helvetica", 12), text="V", bg="#F14975", fg="black")
@@ -105,12 +110,12 @@ class Page1(tk.Frame):
 
 #next button to show frame 3
 
-        button2= Button (self, text="Next", bg="#F14975", activebackground="#288C70", width=10, font=("Helvetica", 12, "bold"),
+        button2= Button (self, text="Next", bg="#43B262", activebackground="#288C70", width=10, font=("Helvetica", 12, "bold"),
                         command = lambda : controller.show_frame(Page2))
         
         button2.place(x=730, y=440)
 
-  
+#-------------------------------------------------------------------#
   
   
 # third window frame page2
@@ -140,16 +145,81 @@ class Page2(tk.Frame):
 
 #next button to show frame 3
 
-        button3= Button (self, text="Next", bg="#F14975", activebackground="#288C70", width=10, font=("Helvetica", 12, "bold"),
-                        command = lambda : controller.show_frame(Page1))
+        button3= Button (self, text="Next", bg="#43B262", activebackground="#288C70", width=10, font=("Helvetica", 12, "bold"),
+                        command = lambda : controller.show_frame(Page3))
         
         button3.place(x=730, y=440)
-  
-def main():
-    global app, self, user_details, total_entries
 
-    user_details=[]#create an empty list
-    total_entries= 0
+
+#-------------------------------------------------------------------#
+
+
+class Page3(tk.Frame):
+     
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+
+#background image
+        self.image4= PhotoImage(file="Screenshot (135).png")
+        self.start_bg= Label(self, image=self.image4)
+        self.start_bg.grid(row=0,column=0)
+
+#question
+        Label(self, width="27", text="What is 92/100 as decimals?", fg="white", bg= "black" , font=("helvetica", 14) ).place(x=298, y=165)
+
+#options 
+        #option 2 is right
+        option1=Radiobutton(self, value="one", font=("helvetica", 12), text="9.2", bg="#F14975", fg="black")
+        option1.place(x=295, y=426)
+        option2=Radiobutton(self, value="two", font=("helvetica", 12), text="0.92", bg="#F14975", fg="black")
+        option2.place(x=567, y=426)
+        option3=Radiobutton(self, value="three", font=("helvetica", 12), text="00.92", bg="#F14975", fg="black")
+        option3.place(x=290, y=300)
+        option4=Radiobutton(self, value="four", font=("helvetica", 12), text="000.92", bg="#F14975", fg="black")
+        option4.place(x=560, y=300)
+
+#next button to show frame 3
+
+        button4= Button (self, text="Next", bg="#43B262", activebackground="#288C70", width=10, font=("Helvetica", 12, "bold"),
+                        command = lambda : controller.show_frame(Page4))
+        
+        button4.place(x=730, y=440)
+
+#-------------------------------------------------------------------#
+
+
+class Page4(tk.Frame):
+     
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+
+#background image
+        self.image5= PhotoImage(file="Screenshot (135).png")
+        self.start_bg= Label(self, image=self.image5)
+        self.start_bg.grid(row=0,column=0)
+
+#question
+        Label(self, width="27", text="How many minutes in 3 hours?", fg="white", bg= "black" , font=("helvetica", 14) ).place(x=298, y=165)
+
+#options 
+        #option 4 is right
+        option1=Radiobutton(self, value="one", font=("helvetica", 12), text="120", bg="#F14975", fg="black")
+        option1.place(x=295, y=426)
+        option2=Radiobutton(self, value="two", font=("helvetica", 12), text="240", bg="#F14975", fg="black")
+        option2.place(x=567, y=426)
+        option3=Radiobutton(self, value="three", font=("helvetica", 12), text="90", bg="#F14975", fg="black")
+        option3.place(x=295, y=300)
+        option4=Radiobutton(self, value="four", font=("helvetica", 12), text="180", bg="#F14975", fg="black")
+        option4.place(x=565, y=300)
+
+#next button to show frame 3
+
+        button5= Button (self, text="Next", bg="#43B262", activebackground="#288C70", width=10, font=("Helvetica", 12, "bold"),
+                        command = lambda : controller.show_frame(Page1))
+        
+        button5.place(x=730, y=440)
+
+
 
 # Driver Code
 app = tkinterApp()
