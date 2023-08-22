@@ -8,7 +8,7 @@ from typing import Self
 
   
 LARGEFONT =("Verdana", 35)
-  
+
 class tkinterApp(tk.Tk):
      
 # __init__ function for class tkinterApp
@@ -48,8 +48,7 @@ class tkinterApp(tk.Tk):
         frame = self.frames[cont]
         frame.tkraise()
   
-# first window frame startpage
-  
+# first window frame startpage  
 class StartPage(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
@@ -58,6 +57,40 @@ class StartPage(tk.Frame):
         self.image1= PhotoImage(file="Screenshot (122).png")
         self.start_bg= Label(self, image=self.image1)
         self.start_bg.grid(row=0,column=0)
+
+    #check that the entries are not left blank
+    def append():
+        global user_details, entry_name, entry_age, total_entries
+# clear the boxes
+        user_details.append([entry_name.get()])
+        entry_name.delete(0, 'end')
+        entry_age.delete(0, 'end')
+
+        total_entries += 1
+
+def check_inputs():
+    #global variables used
+    global user_details, entry_name, entry_age, total_entries
+    input_check = 0
+    Label(app, text="                   ",background="pink").place(x=457, y=60)
+    Label(app, text="                   ",background="pink").place(x=457, y=90)
+
+#check that customer entry is not blank
+    if len(entry_name.get()) == 0:
+        Label(app, fg="black",background="#FFF3E4", text="Required").place(x=250, y=150)
+        input_check=1
+
+#check that the age is not blank and is between 7- 12 
+    if (entry_age.get().isdigit()):
+        if int(entry_age.get()) < 7 or int(entry_age.get()) > 12:
+            Label(app, fg="black",background="#FFF3E4", text="7-12 only").place(x=250, y=250)
+            input_check=1
+        else:
+            Label(app, fg="black" ,background="#FFF3E4", text=" 7-12 only").place(x=250, y=250)
+            input_check=1
+        if input_check ==0: 
+            append()
+
 
 #labels and entries
         Label(self, width="8", text="Name", fg="black", bg= "#43B262" , font=("helvetica", 14) ).place(x=250, y=200)
@@ -74,12 +107,9 @@ class StartPage(tk.Frame):
         button1= Button(
         self, text="Start", bg="#F14975", 
 activebackground="#288C70", width=10, font=("Helvetica", 12, 
-"bold"), command=self.start_bg)
+"bold"), command=check_inputs)
         button1.place(relx=0.75, rely=0.5, anchor=CENTER)
-        command = lambda : controller.show_frame(Page1)
-
-  
-
+        command = lambda : [check_inputs(), controller.show_frame(Page1)]
 
 
 
