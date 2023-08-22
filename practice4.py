@@ -73,10 +73,10 @@ class StartPage(tk.Frame):
 
 #start button
         button1= Button (self, text="Start", bg="#F14975", activebackground="#288C70", width=10, font=("Helvetica", 12, "bold"),
-                        command = lambda : controller.show_frame(Page2))
+                        command = lambda : controller.show_frame(Page1))
         
         button1.place(x=610, y=245)
- 
+
 
 # second window frame page1
 class Page1(tk.Frame):
@@ -84,54 +84,66 @@ class Page1(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
 
-        #background image
-        self.image1= PhotoImage(file="Screenshot (96).png")
-        self.start_bg= Label(self, image=self.image1)
+#background image
+        self.image2= PhotoImage(file="Screenshot (135).png")
+        self.start_bg= Label(self, image=self.image2)
         self.start_bg.grid(row=0,column=0)
 
+#question
+        Label(self, width="27", text="What is the roman numeral for 50?", fg="white", bg= "black" , font=("helvetica", 14) ).place(x=298, y=165)
 
-        Label(self, width="8", text="Age", fg="black", bg= "#43B262" , font=("helvetica", 14) ).place(x=250, y=300)
+#options 
+        #option 1 is right
+        option1=Radiobutton(self, value="one", font=("helvetica", 12), text="X", bg="#F14975", fg="black")
+        option1.place(x=300, y=426)
+        option2=Radiobutton(self, value="two", font=("helvetica", 12), text="L", bg="#F14975", fg="black")
+        option2.place(x=572, y=426)
+        option3=Radiobutton(self, value="three", font=("helvetica", 12), text="V", bg="#F14975", fg="black")
+        option3.place(x=300, y=300)
+        option4=Radiobutton(self, value="four", font=("helvetica", 12), text="D", bg="#F14975", fg="black")
+        option4.place(x=570, y=300)
 
-  
-        # button to show frame 2 with text
-        # layout2
+#next button to show frame 3
 
-        button2= Button (self, text="Next",bg='#F14975', fg='white', activebackground='#288C70',
+        button2= Button (self, text="Next", bg="#F14975", activebackground="#288C70", width=10, font=("Helvetica", 12, "bold"),
                         command = lambda : controller.show_frame(Page2))
+        
+        button2.place(x=730, y=440)
 
   
   
   
 # third window frame page2
 class Page2(tk.Frame):
+     
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
 
-        #background image
-        self.image1= PhotoImage(file="Screenshot (122).png")
-        self.start_bg= Label(self, image=self.image1)
+#background image
+        self.image3= PhotoImage(file="Screenshot (135).png")
+        self.start_bg= Label(self, image=self.image3)
         self.start_bg.grid(row=0,column=0)
 
-        label = ttk.Label(self, text ="Page 2", font = LARGEFONT)
-        label.grid(row = 0, column = 4, padx = 10, pady = 10)
-  
-        # button to show frame 2 with text
-        # layout2
-        button1 = ttk.Button(self, text ="Page 1",
-                            command = lambda : controller.show_frame(Page1))
-     
-        # putting the button in its place by
-        # using grid
-        button1.grid(row = 1, column = 1, padx = 10, pady = 10)
-  
-        # button to show frame 3 with text
-        # layout3
-        button2 = ttk.Button(self, text ="Startpage",
-                            command = lambda : controller.show_frame(StartPage))
-     
-        # putting the button in its place by
-        # using grid
-        button2.grid(row = 2, column = 1, padx = 10, pady = 10)
+#question
+        Label(self, width="27", text="What is 2864 divided by 2?", fg="white", bg= "black" , font=("helvetica", 14) ).place(x=298, y=165)
+
+#options 
+        #option 3 is right
+        option1=Radiobutton(self, value="one", font=("helvetica", 12), text="1841", bg="#F14975", fg="black")
+        option1.place(x=295, y=426)
+        option2=Radiobutton(self, value="two", font=("helvetica", 12), text="1213", bg="#F14975", fg="black")
+        option2.place(x=567, y=426)
+        option3=Radiobutton(self, value="three", font=("helvetica", 12), text="1432", bg="#F14975", fg="black")
+        option3.place(x=295, y=300)
+        option4=Radiobutton(self, value="four", font=("helvetica", 12), text="1410", bg="#F14975", fg="black")
+        option4.place(x=565, y=300)
+
+#next button to show frame 3
+
+        button3= Button (self, text="Next", bg="#F14975", activebackground="#288C70", width=10, font=("Helvetica", 12, "bold"),
+                        command = lambda : controller.show_frame(Page1))
+        
+        button3.place(x=730, y=440)
   
 def main():
     global app, self, user_details, total_entries
