@@ -49,10 +49,9 @@ class tkinterApp(tk.Tk):
         frame.tkraise()
   
 
-#-------------------------------------------------------------------#
+#--------------------------# first window frame (startpage)-----------------------------#
 
 
-# first window frame startpage  
 class StartPage(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
@@ -88,10 +87,9 @@ class StartPage(tk.Frame):
         app.destroy()
 
 
-#-------------------------------------------------------------------#
+#-------------------------# second window frame page1------------------------------------------#
 
 
-# second window frame page1
 class Page1(tk.Frame):
      
     def __init__(self, parent, controller):
@@ -122,11 +120,15 @@ class Page1(tk.Frame):
                         command = lambda : controller.show_frame(Page2))
         
         button2.place(x=730, y=440)
+        button6= Button (self, text="Quit", bg="#A5C2E9", activebackground="#8E699D", width=10, font=("Helvetica", 12, "bold"),
+                        command = quit)
+        button6.place(x=80, y=440)
 
-#-------------------------------------------------------------------#
-  
-  
-# third window frame page2
+
+
+#---------------------------# third window frame page2----------------------------------------#
+
+
 class Page2(tk.Frame):
      
     def __init__(self, parent, controller):
@@ -151,15 +153,18 @@ class Page2(tk.Frame):
         option4=Radiobutton(self, value="four", font=("helvetica", 12), text="1410", bg="#FF7C9F", fg="black")
         option4.place(x=565, y=300)
 
-#next button to show frame 3
+#next button to show frame 4
 
         button3= Button (self, text="Next", bg="#43B262", activebackground="#A5C2E9", width=10, font=("Helvetica", 12, "bold"),
                         command = lambda : controller.show_frame(Page3))
         
         button3.place(x=730, y=440)
+        button6= Button (self, text="Quit", bg="#A5C2E9", activebackground="#8E699D", width=10, font=("Helvetica", 12, "bold"),
+                        command = quit)
+        button6.place(x=80, y=440)
 
 
-#-------------------------------------------------------------------#
+#---------------------# fourth window frame page3----------------------------------------------#
 
 
 class Page3(tk.Frame):
@@ -186,14 +191,17 @@ class Page3(tk.Frame):
         option4=Radiobutton(self, value="four", font=("helvetica", 12), text="000.92", bg="#FF7C9F", fg="black")
         option4.place(x=560, y=300)
 
-#next button to show frame 3
+#next button to show frame 5
 
         button4= Button (self, text="Next", bg="#43B262", activebackground="#A5C2E9", width=10, font=("Helvetica", 12, "bold"),
                         command = lambda : controller.show_frame(Page4))
         
         button4.place(x=730, y=440)
+        button6= Button (self, text="Quit", bg="#A5C2E9", activebackground="#8E699D", width=10, font=("Helvetica", 12, "bold"),
+                        command = quit)
+        button6.place(x=80, y=440)
 
-#-------------------------------------------------------------------#
+#----------------------# fifth window frame page4---------------------------------------------#
 
 
 class Page4(tk.Frame):
@@ -220,12 +228,16 @@ class Page4(tk.Frame):
         option4=Radiobutton(self, value="four", font=("helvetica", 12), text="180", bg="#FF7C9F", fg="black")
         option4.place(x=565, y=300)
 
-#next button to show frame 3
+#next button to show frame 5
 
         button5= Button (self, text="Next", bg="#43B262", activebackground="#A5C2E9", width=10, font=("Helvetica", 12, "bold"),
                         command = lambda : controller.show_frame(Page1))
         
         button5.place(x=730, y=440)
+        button6= Button (self, text="Quit", bg="#A5C2E9", activebackground="#8E699D", width=10, font=("Helvetica", 12, "bold"),
+                        command = quit)
+        button6.place(x=80, y=440)
+
 
 
 
