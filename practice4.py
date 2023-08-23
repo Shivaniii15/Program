@@ -73,11 +73,19 @@ class StartPage(tk.Frame):
         entry_age=Entry(self, width=18, font=("helvetica", 14),  fg= "#C63861")
         entry_age.place(x=350,y=300 )
 
-#start button
-        button1= Button (self, text="Start", bg="#FF7C9F", activebackground="#288C70", width=10, font=("Helvetica", 12, "bold"),
+#start and quit button
+        button1= Button (self, text="Start", bg="#FF7C9F", activebackground="#A5C2E9", width=10, font=("Helvetica", 12, "bold"),
                         command = lambda : controller.show_frame(Page1))
         
         button1.place(x=610, y=245)
+        button6= Button (self, text="Quit", bg="#A5C2E9", activebackground="#8E699D", width=10, font=("Helvetica", 12, "bold"),
+                command = quit)
+        button6.place(x=720, y=458)
+
+        
+        #adding functions
+    def quit(): #quit window
+        app.destroy()
 
 
 #-------------------------------------------------------------------#
@@ -108,9 +116,9 @@ class Page1(tk.Frame):
         option4=Radiobutton(self, value="four", font=("helvetica", 12), text="D", bg="#FF7C9F", fg="black")
         option4.place(x=570, y=300)
 
-#next button to show frame 3
+#next and quit button to show frame 3
 
-        button2= Button (self, text="Next", bg="#43B262", activebackground="#288C70", width=10, font=("Helvetica", 12, "bold"),
+        button2= Button (self, text="Next", bg="#43B262", activebackground="#A5C2E9", width=10, font=("Helvetica", 12, "bold"),
                         command = lambda : controller.show_frame(Page2))
         
         button2.place(x=730, y=440)
@@ -145,7 +153,7 @@ class Page2(tk.Frame):
 
 #next button to show frame 3
 
-        button3= Button (self, text="Next", bg="#43B262", activebackground="#288C70", width=10, font=("Helvetica", 12, "bold"),
+        button3= Button (self, text="Next", bg="#43B262", activebackground="#A5C2E9", width=10, font=("Helvetica", 12, "bold"),
                         command = lambda : controller.show_frame(Page3))
         
         button3.place(x=730, y=440)
@@ -180,7 +188,7 @@ class Page3(tk.Frame):
 
 #next button to show frame 3
 
-        button4= Button (self, text="Next", bg="#43B262", activebackground="#288C70", width=10, font=("Helvetica", 12, "bold"),
+        button4= Button (self, text="Next", bg="#43B262", activebackground="#A5C2E9", width=10, font=("Helvetica", 12, "bold"),
                         command = lambda : controller.show_frame(Page4))
         
         button4.place(x=730, y=440)
@@ -214,7 +222,7 @@ class Page4(tk.Frame):
 
 #next button to show frame 3
 
-        button5= Button (self, text="Next", bg="#43B262", activebackground="#288C70", width=10, font=("Helvetica", 12, "bold"),
+        button5= Button (self, text="Next", bg="#43B262", activebackground="#A5C2E9", width=10, font=("Helvetica", 12, "bold"),
                         command = lambda : controller.show_frame(Page1))
         
         button5.place(x=730, y=440)
