@@ -74,7 +74,7 @@ class StartPage(tk.Frame):
         entry_age.place(x=350,y=300 )
 
 #start button
-        button1= Button (self, text="Start", bg="#F14975", activebackground="#288C70", width=10, font=("Helvetica", 12, "bold"),
+        button1= Button (self, text="Start", bg="#FF7C9F", activebackground="#288C70", width=10, font=("Helvetica", 12, "bold"),
                         command = lambda : controller.show_frame(Page1))
         
         button1.place(x=610, y=245)
@@ -99,13 +99,13 @@ class Page1(tk.Frame):
 
 #options 
         #option 1 is right
-        option1=Radiobutton(self, value="one", font=("helvetica", 12), text="X", bg="#F14975", fg="black")
+        option1=Radiobutton(self, value="one", font=("helvetica", 12), text="X", bg="#FF7C9F", fg="black")
         option1.place(x=295, y=426)
-        option2=Radiobutton(self, value="two", font=("helvetica", 12), text="L", bg="#F14975", fg="black")
+        option2=Radiobutton(self, value="two", font=("helvetica", 12), text="L", bg="#FF7C9F", fg="black")
         option2.place(x=572, y=426)
-        option3=Radiobutton(self, value="three", font=("helvetica", 12), text="V", bg="#F14975", fg="black")
+        option3=Radiobutton(self, value="three", font=("helvetica", 12), text="V", bg="#FF7C9F", fg="black")
         option3.place(x=300, y=300)
-        option4=Radiobutton(self, value="four", font=("helvetica", 12), text="D", bg="#F14975", fg="black")
+        option4=Radiobutton(self, value="four", font=("helvetica", 12), text="D", bg="#FF7C9F", fg="black")
         option4.place(x=570, y=300)
 
 #next button to show frame 3
@@ -134,13 +134,13 @@ class Page2(tk.Frame):
 
 #options 
         #option 3 is right
-        option1=Radiobutton(self, value="one", font=("helvetica", 12), text="1841", bg="#F14975", fg="black")
+        option1=Radiobutton(self, value="one", font=("helvetica", 12), text="1841", bg="#FF7C9F", fg="black")
         option1.place(x=295, y=426)
-        option2=Radiobutton(self, value="two", font=("helvetica", 12), text="1213", bg="#F14975", fg="black")
+        option2=Radiobutton(self, value="two", font=("helvetica", 12), text="1213", bg="#FF7C9F", fg="black")
         option2.place(x=567, y=426)
-        option3=Radiobutton(self, value="three", font=("helvetica", 12), text="1432", bg="#F14975", fg="black")
+        option3=Radiobutton(self, value="three", font=("helvetica", 12), text="1432", bg="#FF7C9F", fg="black")
         option3.place(x=295, y=300)
-        option4=Radiobutton(self, value="four", font=("helvetica", 12), text="1410", bg="#F14975", fg="black")
+        option4=Radiobutton(self, value="four", font=("helvetica", 12), text="1410", bg="#FF7C9F", fg="black")
         option4.place(x=565, y=300)
 
 #next button to show frame 3
@@ -169,13 +169,13 @@ class Page3(tk.Frame):
 
 #options 
         #option 2 is right
-        option1=Radiobutton(self, value="one", font=("helvetica", 12), text="9.2", bg="#F14975", fg="black")
+        option1=Radiobutton(self, value="one", font=("helvetica", 12), text="9.2", bg="#FF7C9F", fg="black")
         option1.place(x=295, y=426)
-        option2=Radiobutton(self, value="two", font=("helvetica", 12), text="0.92", bg="#F14975", fg="black")
+        option2=Radiobutton(self, value="two", font=("helvetica", 12), text="0.92", bg="#FF7C9F", fg="black")
         option2.place(x=567, y=426)
-        option3=Radiobutton(self, value="three", font=("helvetica", 12), text="00.92", bg="#F14975", fg="black")
+        option3=Radiobutton(self, value="three", font=("helvetica", 12), text="00.92", bg="#FF7C9F", fg="black")
         option3.place(x=290, y=300)
-        option4=Radiobutton(self, value="four", font=("helvetica", 12), text="000.92", bg="#F14975", fg="black")
+        option4=Radiobutton(self, value="four", font=("helvetica", 12), text="000.92", bg="#FF7C9F", fg="black")
         option4.place(x=560, y=300)
 
 #next button to show frame 3
@@ -203,13 +203,13 @@ class Page4(tk.Frame):
 
 #options 
         #option 4 is right
-        option1=Radiobutton(self, value="one", font=("helvetica", 12), text="120", bg="#F14975", fg="black")
+        option1=Radiobutton(self, value="one", font=("helvetica", 12), text="120", bg="#FF7C9F", fg="black")
         option1.place(x=295, y=426)
-        option2=Radiobutton(self, value="two", font=("helvetica", 12), text="240", bg="#F14975", fg="black")
+        option2=Radiobutton(self, value="two", font=("helvetica", 12), text="240", bg="#FF7C9F", fg="black")
         option2.place(x=567, y=426)
-        option3=Radiobutton(self, value="three", font=("helvetica", 12), text="90", bg="#F14975", fg="black")
+        option3=Radiobutton(self, value="three", font=("helvetica", 12), text="90", bg="#FF7C9F", fg="black")
         option3.place(x=295, y=300)
-        option4=Radiobutton(self, value="four", font=("helvetica", 12), text="180", bg="#F14975", fg="black")
+        option4=Radiobutton(self, value="four", font=("helvetica", 12), text="180", bg="#FF7C9F", fg="black")
         option4.place(x=565, y=300)
 
 #next button to show frame 3
@@ -223,5 +223,6 @@ class Page4(tk.Frame):
 
 # Driver Code
 app = tkinterApp()
+app.title("Shivani<3")
 app.geometry("895x505")
 app.mainloop()
