@@ -4,10 +4,10 @@ from tkinter import *
 import random
 from tkinter.font import Font
 import tkinter.font as font
-from typing import Self
-
   
-LARGEFONT =("Verdana", 35)
+#adding functions
+def quit(): #quit window
+    app.destroy()
 
 class tkinterApp(tk.Tk):
      
@@ -64,13 +64,11 @@ class StartPage(tk.Frame):
 #labels and entries
         Label(self, width="8", text="Name", fg="black", bg= "#43B262" , font=("helvetica", 14) ).place(x=250, y=200)
 
-        entry_name=Entry(self, width=18, font=("helvetica", 14), fg= "#C63861")
-        entry_name.place(x=350,y=200 )
+        entry_name=Entry(self, width=18, font=("helvetica", 14), fg= "#C63861").place(x=350,y=200 )
 
         Label(self, width="8", text="Age", fg="black", bg= "#43B262" , font=("helvetica", 14) ).place(x=250, y=300)
 
-        entry_age=Entry(self, width=18, font=("helvetica", 14),  fg= "#C63861")
-        entry_age.place(x=350,y=300 )
+        entry_age=Entry(self, width=18, font=("helvetica", 14),  fg= "#C63861").place(x=350,y=300 )
 
 #start and quit button
         button1= Button (self, text="Start", bg="#FF7C9F", activebackground="#A5C2E9", width=10, font=("Helvetica", 12, "bold"),
@@ -80,11 +78,6 @@ class StartPage(tk.Frame):
         button6= Button (self, text="Quit", bg="#A5C2E9", activebackground="#8E699D", width=10, font=("Helvetica", 12, "bold"),
                 command = quit)
         button6.place(x=720, y=458)
-
-        
-        #adding functions
-    def quit(): #quit window
-        app.destroy()
 
 
 #-------------------------# second window frame page1------------------------------------------#
@@ -237,10 +230,8 @@ class Page4(tk.Frame):
         button6= Button (self, text="Quit", bg="#A5C2E9", activebackground="#8E699D", width=10, font=("Helvetica", 12, "bold"),
                         command = quit)
         button6.place(x=80, y=440)
-
-
-
-
+        
+        
 # Driver Code
 app = tkinterApp()
 app.title("Shivani<3")

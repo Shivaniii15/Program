@@ -128,6 +128,44 @@ class Page2(tk.Frame):
         # putting the button in its place by
         # using grid
         button2.grid(row = 2, column = 1, padx = 10, pady = 10)
+
+
+#----------------------# sixth window frame page4---------------------------------------------#
+
+
+class Page5(tk.Frame):
+     
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+
+#background image
+        self.image5= PhotoImage(file="Screenshot (135).png")
+        self.start_bg= Label(self, image=self.image5)
+        self.start_bg.grid(row=0,column=0)
+
+#question
+        Label(self, width="27", text="How much is 3/8 times three?", fg="white", bg= "black" , font=("helvetica", 14) ).place(x=298, y=165)
+
+#options 
+        #option 2 is right
+        option1=Radiobutton(self, value="one", font=("helvetica", 12), text="6/8", bg="#FF7C9F", fg="black")
+        option1.place(x=295, y=426)
+        option2=Radiobutton(self, value="two", font=("helvetica", 12), text="9/8", bg="#FF7C9F", fg="black")
+        option2.place(x=567, y=426)
+        option3=Radiobutton(self, value="three", font=("helvetica", 12), text="8/6", bg="#FF7C9F", fg="black")
+        option3.place(x=295, y=300)
+        option4=Radiobutton(self, value="four", font=("helvetica", 12), text="8/9", bg="#FF7C9F", fg="black")
+        option4.place(x=565, y=300)
+
+#next button to show frame 5
+
+        button5= Button (self, text="Next", bg="#43B262", activebackground="#A5C2E9", width=10, font=("Helvetica", 12, "bold"),
+                        command = lambda : controller.show_frame(Page1))
+        
+        button5.place(x=730, y=440)
+        button6= Button (self, text="Quit", bg="#A5C2E9", activebackground="#8E699D", width=10, font=("Helvetica", 12, "bold"),
+                        command = quit)
+        button6.place(x=80, y=440)
   
   
 # Driver Code
