@@ -101,22 +101,22 @@ class StartPage(tk.Frame):
 
 #check name and requirements
         if not name:
-            self.show_error("Please enter your name.", 200)
+            self.show_error("Please enter your name.", 150)
         elif not age:
-            self.show_error("Please enter your age.", 300)
-        elif not age.isdigit() or not (7<= int(age) <=12):
-            self.show_error("Age must be between 7 and 12", 300)
+            self.show_error("Please enter your age.", 350)
+        elif not age.isdigit() or not (8<= int(age) <=13):
+            self.show_error("Age must be between 7 and 12", 350)
         else:
             self.controller.show_frame(Page1)
 
     def clear_errors(self):
         for widget in self.winfo_children():
-            if isinstance(widget, Label) and widget.cget("fg") == "red":
+            if isinstance(widget, Label) and (widget.cget("fg") == "white" or "error" in widget.cget("text")):
                 widget.destroy()
     
     def show_error(self, message, y):
-        error_label = Label(self, text=message, fg="red", font=("helvetica", 12))
-        error_label.place(x=350, y=100)
+        error_label = Label(self, text=message, fg="white", bg= "#80A9E1", font=("helvetica", 12))
+        error_label.place(x=354, y=y)
 
 
 #-------------------------# second window frame page1------------------------------------------#
