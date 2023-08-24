@@ -56,6 +56,12 @@ class StartPage(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
 
+        self.controller=controller
+        self.create_widgets()
+
+#adding widgets under a function
+    def create_widgets(self):
+
 #background image
         self.image1= PhotoImage(file="Screenshot (122).png")
         self.start_bg= Label(self, image=self.image1)
@@ -64,20 +70,53 @@ class StartPage(tk.Frame):
 #labels and entries
         Label(self, width="8", text="Name", fg="black", bg= "#43B262" , font=("helvetica", 14) ).place(x=250, y=200)
 
-        entry_name=Entry(self, width=18, font=("helvetica", 14), fg= "#C63861").place(x=350,y=200 )
+        self.entry_name=Entry(self, width=18, font=("helvetica", 14), fg= "#C63861")
+        self.entry_name.place(x=350,y=200 )
 
         Label(self, width="8", text="Age", fg="black", bg= "#43B262" , font=("helvetica", 14) ).place(x=250, y=300)
 
-        entry_age=Entry(self, width=18, font=("helvetica", 14),  fg= "#C63861").place(x=350,y=300 )
+        self.entry_age=Entry(self, width=18, font=("helvetica", 14),  fg= "#C63861")
+        self.entry_age.place(x=350,y=300 )
 
 #start and quit button
-        button1= Button (self, text="Start", bg="#FF7C9F", activebackground="#A5C2E9", width=10, font=("Helvetica", 12, "bold"),
-                        command = lambda : controller.show_frame(Page1))
-        
-        button1.place(x=610, y=245)
-        button6= Button (self, text="Quit", bg="#A5C2E9", activebackground="#8E699D", width=10, font=("Helvetica", 12, "bold"),
+        self.button1= Button (self, text="Start", bg="#FF7C9F", activebackground="#A5C2E9", width=10, font=("Helvetica", 12, "bold"),
+                        command = self.start_quiz)        
+        self.button1.place(x=610, y=245)
+
+
+        self.button6= Button (self, text="Quit", bg="#A5C2E9", activebackground="#8E699D", width=10, font=("Helvetica", 12, "bold"),
                 command = quit)
-        button6.place(x=720, y=458)
+        self.button6.place(x=720, y=458)
+
+
+#defining the start_quiz function
+
+    def start_quiz(self):
+
+        name = self.entry_name.get()
+        age = self.entry_age.get()
+
+#clear previous error message
+        self.clear_errors()
+
+#check name and requirements
+        if not name:
+            self.show_error("Please enter your name.", 150)
+        elif not age:
+            self.show_error("Please enter your age.", 350)
+        elif not age.isdigit() or not (8<= int(age) <=13):
+            self.show_error("Age must be between 7 and 12", 350)
+        else:
+            self.controller.show_frame(Page1)
+
+    def clear_errors(self):
+        for widget in self.winfo_children():
+            if isinstance(widget, Label) and (widget.cget("fg") == "white" or "error" in widget.cget("text")):
+                widget.destroy()
+    
+    def show_error(self, message, y):
+        error_label = Label(self, text=message, fg="white", bg= "#80A9E1", font=("helvetica", 12))
+        error_label.place(x=354, y=y)
 
 
 #-------------------------# second window frame page1------------------------------------------#
