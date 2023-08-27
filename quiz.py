@@ -100,6 +100,7 @@ class StartPage(tk.Frame):
         self.clear_errors()
 
 #check name and requirements
+
         if not name:
             self.show_error("Please enter your name.", 150)
         elif not age:

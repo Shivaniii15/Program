@@ -32,9 +32,9 @@ def facts():#fun facts page
     root.destroy()
     import facts 
 
-def quizzes():#quizzes page
+def quiz():#quizzes page
     root.destroy()
-    import quizzes
+    import quiz
 
 def motivation():
     root.destroy()
@@ -52,7 +52,7 @@ button3= Button (root, text="TOPICS!", command=topics, bg='#8191FF', activebackg
 button3.place(x=167, y=170)
 button4= Button (root, text="FUN FACTS", command=facts, bg='#FFC327', activebackground='#FF914D', activeforeground='white')
 button4.place(x=330, y=160)
-button5= Button (root, text="QUIZES!", command=quizzes, bg='#FF8652', activebackground='#FF0013', activeforeground='white')
+button5= Button (root, text="QUIZES!", command= quiz, bg='#FF8652', activebackground='#FF0013', activeforeground='white')
 button5.place(x=526, y=164)
 button6= Button (root, text="REPORT!", bg='#43B262', activebackground='#168062', activeforeground='white')
 button6.place(x=235,y=318)
