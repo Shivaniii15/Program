@@ -87,6 +87,9 @@ class StartPage(tk.Frame):
         self.button6= Button (self, text="Quit", bg="#A5C2E9", activebackground="#8E699D", width=10, font=("Helvetica", 12, "bold"),
                 command = quit)
         self.button6.place(x=720, y=458)
+        self.button6= Button (self, text="Home", bg="#A5C2E9", activebackground="#8E699D", width=10, font=("Helvetica", 12, "bold"),
+                command = quit)
+        self.button6.place(x=720, y=458)
 
 
 #defining the start_quiz function
@@ -285,7 +288,7 @@ class Page5(tk.Frame):
         self.start_bg.grid(row=0,column=0)
 
 #question
-        Label(self, width="27", text="Whta is 3/8 times three?", fg="white", bg= "black" , font=("helvetica", 14) ).place(x=298, y=165)
+        Label(self, width="27", text="What is 3/8 times three?", fg="white", bg= "black" , font=("helvetica", 14) ).place(x=298, y=165)
 
 #options 
         #option 2 is right
