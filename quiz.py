@@ -9,6 +9,10 @@ import tkinter.font as font
 def quit(): #quit window
     app.destroy()
 
+def home():#menu oage
+    app.destroy()
+    import home
+
 class tkinterApp(tk.Tk):
      
 # __init__ function for class tkinterApp
@@ -29,7 +33,7 @@ class tkinterApp(tk.Tk):
   
 # iterating through a tuple consisting
 # of the different page layouts
-        for F in (StartPage, Page1, Page2, Page3, Page4, Page5):
+        for F in (StartPage, Page1, Page2, Page3, Page4, Page5, EndPage):
   
             frame = F(container, self)
   
@@ -274,12 +278,12 @@ class Page4(tk.Frame):
                         command = quit)
         button6.place(x=80, y=440)
         
-#----------------------# fifth window frame page4---------------------------------------------#
+#----------------------# fifth window frame page5---------------------------------------------#
 
 
 class Page5(tk.Frame):
      
-    def __init__(self, parent, controller):
+    def __init__(self, parent, controller, wrong_answers):
         tk.Frame.__init__(self, parent)
 
 #background image
@@ -304,12 +308,49 @@ class Page5(tk.Frame):
 #next button to show frame 5
 
         button5= Button (self, text="Next", bg="#43B262", activebackground="#A5C2E9", width=10, font=("Helvetica", 12, "bold"),
-                        command = lambda : controller.show_frame(Page1))
+                        command = lambda : controller.show_frame(EndPage(self, controller, wrong_answers)))
         
         button5.place(x=730, y=440)
         button6= Button (self, text="Quit", bg="#A5C2E9", activebackground="#8E699D", width=10, font=("Helvetica", 12, "bold"),
                         command = quit)
         button6.place(x=80, y=440)
+
+
+#----------------------# sixth window frame---------------------------------------------#
+
+class EndPage(tk.Frame):
+     
+    def __init__(self, parent, controller, wrong_answers):
+        tk.Frame.__init__(self, parent)
+
+        # Background image
+        self.image6 = PhotoImage(file="Reports image.png")
+        self.start_bg = Label(self, image=self.image6)
+        self.start_bg.grid(row=0, column=0)
+
+        # Displaying wrong answers and scores
+        Label(self, text="Quiz Results", fg="white", bg="black", font=("helvetica", 20)).place(x=350, y=50)
+        Label(self, text="Question(s) you got wrong:", fg="white", bg="black", font=("helvetica", 14)).place(x=50, y=150)
+
+        y_pos = 200
+        for question_num, correct_option in wrong_answers.items():
+            Label(self, text=f"Question {question_num}:", fg="white", bg="black", font=("helvetica", 12)).place(x=100, y=y_pos)
+            Label(self, text=f"Correct Answer: {correct_option}", fg="white", bg="black", font=("helvetica", 12)).place(x=250, y=y_pos)
+            y_pos += 50
+
+        total_correct = len(wrong_answers)
+        total_score = 5 - total_correct
+        Label(self, text=f"Total Score: {total_score}/5", fg="white", bg="black", font=("helvetica", 16)).place(x=350, y=400)
+
+        # Home and Quit buttons
+        button_home = Button(self, text="Menu", bg="#A5C2E9", activebackground="#8E699D", width=10, font=("Helvetica", 12, "bold"),
+                        command=home)
+        button_home.place(x=600, y=450)
+
+        button_quit = Button(self, text="Quit", bg="#A5C2E9", activebackground="#8E699D", width=10, font=("Helvetica", 12, "bold"),
+                        command=quit)
+        button_quit.place(x=730, y=450)
+ 
 
         
 # Driver Code
