@@ -33,7 +33,7 @@ class tkinterApp(tk.Tk):
   
 # iterating through a tuple consisting
 # of the different page layouts
-        for F in (StartPage, Page1, Page2, Page3, Page4, Page5, EndPage):
+        for F in (StartPage, Page1, Page2, Page3, Page4, Page5):
   
             frame = F(container, self)
   
@@ -41,7 +41,7 @@ class tkinterApp(tk.Tk):
 # startpage, page1, page2 respectively with
 # for loop
             self.frames[F] = frame
-  
+        
             frame.grid(row = 0, column = 0, sticky ="nsew")
   
         self.show_frame(StartPage)
@@ -270,8 +270,8 @@ class Page4(tk.Frame):
 
 #next button to show frame 5
 
-        button5= Button (self, text="Next", bg="#43B262", activebackground="#A5C2E9", width=10, font=("Helvetica", 12, "bold"),
-                        command = lambda : controller.show_frame(Page5))
+        button5= Button(self, text="Next", bg="#43B262", activebackground="#A5C2E9", width=10, font=("Helvetica", 12, "bold"),
+                        command =lambda: controller.show_frame(Page5))
         
         button5.place(x=730, y=440)
         button6= Button (self, text="Quit", bg="#A5C2E9", activebackground="#8E699D", width=10, font=("Helvetica", 12, "bold"),
@@ -283,7 +283,7 @@ class Page4(tk.Frame):
 
 class Page5(tk.Frame):
      
-    def __init__(self, parent, controller, wrong_answers):
+    def __init__(self, parent, controller, wrong_answers={}):
         tk.Frame.__init__(self, parent)
 
 #background image
@@ -308,7 +308,7 @@ class Page5(tk.Frame):
 #next button to show frame 5
 
         button5= Button (self, text="Next", bg="#43B262", activebackground="#A5C2E9", width=10, font=("Helvetica", 12, "bold"),
-                        command = lambda : controller.show_frame(EndPage(self, controller, wrong_answers)))
+                        command = lambda : controller.show_frame(EndPage))
         
         button5.place(x=730, y=440)
         button6= Button (self, text="Quit", bg="#A5C2E9", activebackground="#8E699D", width=10, font=("Helvetica", 12, "bold"),
@@ -350,6 +350,7 @@ class EndPage(tk.Frame):
         button_quit = Button(self, text="Quit", bg="#A5C2E9", activebackground="#8E699D", width=10, font=("Helvetica", 12, "bold"),
                         command=quit)
         button_quit.place(x=730, y=450)
+
  
 
         
