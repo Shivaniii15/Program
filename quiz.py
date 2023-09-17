@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import *
 from tkinter.font import Font
 import tkinter.font as font
+import os #since import function is not working, I added 'os' module for launching a new window
 
 # adding functions
 def quit():  # quit window
@@ -407,6 +408,20 @@ class Page5(tk.Frame):
         result_message = f"You scored {user_score}/{total_questions}"
         result_label = Label(result_popup, text=result_message, font=("helvetica", 16))
         result_label.pack(pady=20)
+        result_label.configure(bg="#FFF3E4", fg= "black")
+        result_popup.config(bg="#FF7C9F")
+
+        home_button= Button(result_popup, text="Home", bg="#66EFC9", activebackground="#EFB8FF", width=10,
+                            font=("Helvetica", 11, "bold"), command=self.home)
+        home_button.place(x="150", y="80")
+        quit_button= Button(result_popup, text="Quit", bg="#66EFC9", activebackground="#EFB8FF", width=10,
+                            font=("Helvetica", 11, "bold"), command=self.home)
+        quit_button.place(x="150", y="130")
+
+    def home(self):
+#destroy the current windows
+        self.winfo_toplevel().destroy()
+        import home
 
 
 # Driver Code

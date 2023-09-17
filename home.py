@@ -41,12 +41,6 @@ def motivation():
     import motivation
 
 #adding buttons
-#the basic ones
-button1= Button (root, text="Quit", command=quit , bg='#F14975', fg='white', activebackground='#288C70', activeforeground='white' )
-button1.place(x=550, y=376)
-button2= Button (root, text="Home", bg='#F14975', fg='white', activebackground='#288C70', activeforeground='white')
-button2.place(x=95, y=376)
-
 #the activity ones
 button3= Button (root, text="TOPICS!", command=topics, bg='#8191FF', activebackground='#133795', activeforeground='white')
 button3.place(x=167, y=170)
@@ -54,14 +48,12 @@ button4= Button (root, text="FUN FACTS", command=facts, bg='#FFC327', activeback
 button4.place(x=330, y=160)
 button5= Button (root, text="QUIZES!", command= quiz, bg='#FF8652', activebackground='#FF0013', activeforeground='white')
 button5.place(x=526, y=164)
-button6= Button (root, text="REPORT!", bg='#43B262', activebackground='#168062', activeforeground='white')
-button6.place(x=235,y=318)
+button6= Button (root, text="QUIT",command=quit, bg='#43B262', activebackground='#168062', activeforeground='white')
+button6.place(x=245,y=318)
 button7= Button (root, text="MOTIVATION", command=motivation, bg='#C24468', activebackground='#E13B67', activeforeground='white')
 button7.place(x=427, y=320)
 
 #applying font
-button1['font']= myFont
-button2['font']= myFont
 button3['font']= myFont
 button4['font']= myFont
 button5['font']= myFont
