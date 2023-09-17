@@ -282,6 +282,7 @@ class Page5(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
 
+
 #background image
         self.image5= PhotoImage(file="Screenshot (135).png")
         self.start_bg= Label(self, image=self.image5)
@@ -301,10 +302,11 @@ class Page5(tk.Frame):
         option4=Radiobutton(self, value="four", font=("helvetica", 12), text="8/9", bg="#FF7C9F", fg="black")
         option4.place(x=565, y=300)
 
+
 #next button to show frame 5
 
         button5= Button (self, text="Next", bg="#43B262", activebackground="#A5C2E9", width=10, font=("Helvetica", 12, "bold"),
-                        command = lambda : controller.show_frame(Page1))
+                        )
         
         button5.place(x=730, y=440)
         button6= Button (self, text="Quit", bg="#A5C2E9", activebackground="#8E699D", width=10, font=("Helvetica", 12, "bold"),
