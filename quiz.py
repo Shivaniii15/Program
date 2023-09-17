@@ -61,7 +61,7 @@ class StartPage(tk.Frame):
     def create_widgets(self):
 
         # background image
-        self.image1 = PhotoImage(file="Screenshot (122).png")
+        self.image1 = PhotoImage(file="login.png")
         self.start_bg = Label(self, image=self.image1)
         self.start_bg.grid(row=0, column=0)
 
@@ -130,7 +130,7 @@ class Page1(tk.Frame):
         tk.Frame.__init__(self, parent)
 
         # background image
-        self.image2 = PhotoImage(file="Screenshot (135).png")
+        self.image2 = PhotoImage(file="quiz.png")
         self.start_bg = Label(self, image=self.image2)
         self.start_bg.grid(row=0, column=0)
 
@@ -188,7 +188,7 @@ class Page2(tk.Frame):
         tk.Frame.__init__(self, parent)
 
         # background image
-        self.image3 = PhotoImage(file="Screenshot (135).png")
+        self.image3 = PhotoImage(file="quiz.png")
         self.start_bg = Label(self, image=self.image3)
         self.start_bg.grid(row=0, column=0)
 
@@ -245,7 +245,7 @@ class Page3(tk.Frame):
         tk.Frame.__init__(self, parent)
 
         # background image
-        self.image4 = PhotoImage(file="Screenshot (135).png")
+        self.image4 = PhotoImage(file="quiz.png")
         self.start_bg = Label(self, image=self.image4)
         self.start_bg.grid(row=0, column=0)
 
@@ -302,7 +302,7 @@ class Page4(tk.Frame):
         tk.Frame.__init__(self, parent)
 
         # background image
-        self.image5 = PhotoImage(file="Screenshot (135).png")
+        self.image5 = PhotoImage(file="quiz.png")
         self.start_bg = Label(self, image=self.image5)
         self.start_bg.grid(row=0, column=0)
 
@@ -360,7 +360,7 @@ class Page5(tk.Frame):
         self.controller = controller
 
         # background image
-        self.image5 = PhotoImage(file="Screenshot (135).png")
+        self.image5 = PhotoImage(file="quiz.png")
         self.start_bg = Label(self, image=self.image5)
         self.start_bg.grid(row=0, column=0)
 
@@ -447,7 +447,7 @@ class Page5(tk.Frame):
                          command=close)
         home_button1.place(x=80, y=390)
 
-    def home(self):
+    def home(self): #function to go to home
 #destroy the current windows
         self.winfo_toplevel().destroy()
         import home

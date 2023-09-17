@@ -12,7 +12,7 @@ root.minsize(809,460)
 root.maxsize(809,460)
 
 #adding image
-bg= PhotoImage(file= "screenshot (49).png")
+bg= PhotoImage(file= "facts.png")
 
 #creating canvas
 canvas1= Canvas( root, width=749, height=405)
