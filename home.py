@@ -34,7 +34,7 @@ def facts():#fun facts page
 
 def quiz():#quizzes page
     root.destroy()
-    import practice4
+    import quiz
 
 def motivation():
     root.destroy()

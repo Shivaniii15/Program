@@ -5,6 +5,11 @@ import tkinter.font as font
 import os #since import function is not working, I added 'os' module for launching a new window
 
 # adding functions
+
+def close():#another function to go to the home menu
+    app.destroy()
+    import home
+
 def quit():  # quit window
     app.destroy()
 
@@ -83,7 +88,7 @@ class StartPage(tk.Frame):
         self.button6.place(x=720, y=458)
         self.button6 = Button(self, text="Home", bg="#A5C2E9", activebackground="#8E699D", width=10,
                               font=("Helvetica", 12, "bold"),
-                              command=quit)
+                              command=close)
         self.button6.place(x=720, y=458)
 
     # defining the start_quiz function
@@ -102,7 +107,7 @@ class StartPage(tk.Frame):
             self.show_error("Please enter your name.", 150)
         elif not age:
             self.show_error("Please enter your age.", 350)
-        elif not age.isdigit() or not (8 <= int(age) <= 13):
+        elif not age.isdigit() or not (6 <= int(age) <= 13):
             self.show_error("Age must be between 7 and 12", 350)
         else:
             self.controller.show_frame(Page1)
@@ -153,15 +158,19 @@ class Page1(tk.Frame):
 
         # next and quit button to show frame 
         # next and quit button to show frame 3
-        button2 = Button(self, text="Next", bg="#43B262", activebackground="#A5C2E9", width=10,
+        button2 = Button(self, text="Next", bg="#FFBE17", activebackground="#A5C2E9", width=10,
                          font=("Helvetica", 12, "bold"),
                          command=lambda: controller.show_frame(Page2))
 
         button2.place(x=730, y=440)
-        button6 = Button(self, text="Quit", bg="#A5C2E9", activebackground="#8E699D", width=10,
+        button6 = Button(self, text="Quit", bg="#FFBE17", activebackground="#8E699D", width=10,
                          font=("Helvetica", 12, "bold"),
                          command=quit)
         button6.place(x=80, y=440)
+        home_button1= Button(self, text="Home", bg="#FFBE17", activebackground="#F8ED69", width=10,
+                         font=("Helvetica", 12, "bold"),
+                         command=close)
+        home_button1.place(x=80, y=390)
 
         # Function to store the selected answer
         def save_answer():
@@ -206,15 +215,19 @@ class Page2(tk.Frame):
         option4.place(x=565, y=300)
 
         # next button to show frame 4
-        button3 = Button(self, text="Next", bg="#43B262", activebackground="#A5C2E9", width=10,
+        button3 = Button(self, text="Next", bg="#FFBE17", activebackground="#A5C2E9", width=10,
                          font=("Helvetica", 12, "bold"),
                          command=lambda: controller.show_frame(Page3))
 
         button3.place(x=730, y=440)
-        button6 = Button(self, text="Quit", bg="#A5C2E9", activebackground="#8E699D", width=10,
+        button6 = Button(self, text="Quit", bg="#FFBE17", activebackground="#8E699D", width=10,
                          font=("Helvetica", 12, "bold"),
                          command=quit)
         button6.place(x=80, y=440)
+        home_button1= Button(self, text="Home", bg="#FFBE17", activebackground="#F8ED69", width=10,
+                         font=("Helvetica", 12, "bold"),
+                         command=close)
+        home_button1.place(x=80, y=390)
 
         # Function to store the selected answer
         def save_answer():
@@ -259,15 +272,19 @@ class Page3(tk.Frame):
         option4.place(x=560, y=300)
 
         # next button to show frame 5
-        button4 = Button(self, text="Next", bg="#43B262", activebackground="#A5C2E9", width=10,
+        button4 = Button(self, text="Next", bg="#FFBE17", activebackground="#A5C2E9", width=10,
                          font=("Helvetica", 12, "bold"),
                          command=lambda: controller.show_frame(Page4))
 
         button4.place(x=730, y=440)
-        button6 = Button(self, text="Quit", bg="#A5C2E9", activebackground="#8E699D", width=10,
+        button6 = Button(self, text="Quit", bg="#FFBE17", activebackground="#8E699D", width=10,
                          font=("Helvetica", 12, "bold"),
                          command=quit)
         button6.place(x=80, y=440)
+        home_button1= Button(self, text="Home", bg="#FFBE17", activebackground="#F8ED69", width=10,
+                         font=("Helvetica", 12, "bold"),
+                         command=close)
+        home_button1.place(x=80, y=390)
 
         # Function to store the selected answer
         def save_answer():
@@ -312,15 +329,19 @@ class Page4(tk.Frame):
         option4.place(x=565, y=300)
 
         # next button to show frame 5
-        button5 = Button(self, text="Next", bg="#43B262", activebackground="#A5C2E9", width=10,
+        button5 = Button(self, text="Next", bg="#FFBE17", activebackground="#A5C2E9", width=10,
                          font=("Helvetica", 12, "bold"),
                          command=lambda: controller.show_frame(Page5))
 
         button5.place(x=730, y=440)
-        button6 = Button(self, text="Quit", bg="#A5C2E9", activebackground="#8E699D", width=10,
+        button6 = Button(self, text="Quit", bg="#FFBE17", activebackground="#8E699D", width=10,
                          font=("Helvetica", 12, "bold"),
                          command=quit)
         button6.place(x=80, y=440)
+        home_button1= Button(self, text="Home", bg="#FFBE17", activebackground="#F8ED69", width=10,
+                         font=("Helvetica", 12, "bold"),
+                         command=close)
+        home_button1.place(x=80, y=390)
 
         # Function to store the selected answer
         def save_answer():
@@ -366,15 +387,19 @@ class Page5(tk.Frame):
         option4.place(x=565, y=300)
 
         # submit button to calculate and display the score
-        submit_button = Button(self, text="Submit", bg="#43B262", activebackground="#A5C2E9", width=10,
+        submit_button = Button(self, text="Submit", bg="#FFBE17", activebackground="#A5C2E9", width=10,
                                font=("Helvetica", 12, "bold"),
                                command=self.calculate_and_display_score)
 
         submit_button.place(x=730, y=440)
-        button6 = Button(self, text="Quit", bg="#A5C2E9", activebackground="#8E699D", width=10,
+        button6 = Button(self, text="Quit", bg="#FFBE17", activebackground="#8E699D", width=10,
                          font=("Helvetica", 12, "bold"),
                          command=quit)
         button6.place(x=80, y=440)
+        home_button1= Button(self, text="Home", bg="#FFBE17", activebackground="#F8ED69", width=10,
+                         font=("Helvetica", 12, "bold"),
+                         command=close)
+        home_button1.place(x=80, y=390)
 
         # Function to store the selected answer
         def save_answer():
@@ -417,6 +442,10 @@ class Page5(tk.Frame):
         quit_button= Button(result_popup, text="Quit", bg="#66EFC9", activebackground="#EFB8FF", width=10,
                             font=("Helvetica", 11, "bold"), command=self.home)
         quit_button.place(x="150", y="130")
+        home_button1= Button(self, text="Home", bg="#FFBE17", activebackground="#F8ED69", width=10,
+                         font=("Helvetica", 12, "bold"),
+                         command=close)
+        home_button1.place(x=80, y=390)
 
     def home(self):
 #destroy the current windows
